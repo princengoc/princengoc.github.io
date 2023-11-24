@@ -1,0 +1,43 @@
+title: About Me
+description: about Ngoc
+
+* [One-page CV](cv-industry.pdf)
+* [Academic CV](cvLong.pdf)
+* [arxiv publications](https://arxiv.org/a/tran_n_3.html)
+
+## About Me
+
+I am a data-driven mathematician. My passion is to solve hard quantitative problems, be it from [neuroscience](https://arxiv.org/abs/2003.08533), [auctions theory](https://pubsonline.informs.org/doi/10.1287/moor.2018.0975), [economics](https://epubs.siam.org/doi/abs/10.1137/19M1304295), [hydrology](https://arxiv.org/abs/2102.06197), finance, [ambulance routing](https://arxiv.org/abs/2201.11208), [statistical learning theory](https://epubs.siam.org/doi/abs/10.1137/20M1354490?journalCode=sjmdaq), [semigroup theory](https://www.sciencedirect.com/science/article/pii/S0021869319301723), [random polynomials](https://www.ams.org/journals/tran/2016-368-10/S0002-9947-2016-06565-4/home.html) or [forecasting the evolution of AI with AI](https://www.nature.com/articles/s42256-023-00735-0). I like discrete, geometric problems, data would be a bonus, and I like approaches that are not-main-stream. 
+
+#### My academic career (-2021)
+
+By my early 30s, I have been very fortunate to have experienced the full, typical trajectory of academia: from being a PhD student to graduating them, from reading to solving decade-old conjectures, from working in to creating one's own field. I become friends, mentor and mentee of many wonderful people. I almost squeaked at a dinner with Persi Diaconis when he said he knows of me. The community I was (am?) part of, tropical geometry, has been incredibly collaborative and collegial. 
+
+Those are the parts I love about academia. And then of course, there is the yucky part of every job and I experienced that too. The publications process, the grants-writing, the bureaucracy. Being a method-agnostic, data-driven omnivore problem solver, I find it hard to "fit in" any community. Then the cherry-on-top: in a data competition that me and my student poured our heart in, we lost the lead in the last few days to Yichao Liu, an industry expert. At the winner's conference, he asked me: "You guys had a single learner? If you ran XGBoost you would have won". Maybe. I wouldn't know, because I didn't have the resources to run XGBoost. "Well, it's time to find out", I thought to myself. So I said "yes" when industry came knocking. 
+
+#### Finance (2021-)
+
+Since 2021 I have worked at the [Chicago Trading Company](www.chicagotrading.com) as a quantative researcher. My work is mostly portfolio optimization for options trading.
+
+Books I learned of since joining CTC and enjoyed reading
+
+* [Isichenko](isichenko)
+* [Prices, Quotes]()
+* [Multivariate time-series]() 
+
+#### Hobby projects: data competitions
+
+I do some Kaggle-style data competitions for fun. 
+
+* 2nd place, [Science4Cast](). Ngoc Tran and Yangxinyu Xie.
+* 2nd place, [](). Tanwi M, Ngoc Tran, Yangxinyu Xie.
+
+## Bucket list
+
+"Speak to the universe, and the universe will speak back."
+
+* [ ] Run my own company. 
+* [ ] Run a non-profit that teaches competitive math/stat/coding to low-income primary and middle school students 
+* [ ] Volunteer for WOOF 
+
+
