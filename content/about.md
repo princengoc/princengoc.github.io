@@ -15,13 +15,13 @@ I am a data-driven mathematician. My passion is to solve hard quantitative probl
 </p>
 
 
-#### My academic career (-2021)
+#### My academic career (-2022)
 
 By my early 30s, I had been very fortunate to experience the full, typical trajectory of academia: from being a PhD student to mentoring them, from reading about to solving decade-old conjectures, and from working in to creating my own field. I became a friend, mentor, and mentee to many wonderful people. The community I was (am?) a part of, tropical geometry, has been incredibly collaborative and collegial. 
 
-Those are the parts I love about academia. And then of course, there is the icky part of every job. The publications process, the grants-writing, the bureaucracy. Being a method-agnostic, data-driven omnivore, I find it hard to "fit in" any community. End of 2020, my student [Yangxinyu Xie](https://xieyangxinyu.github.io/) and I did an [IEEE BigData competition](https://www.iarai.ac.at/science4cast/). We lost the lead in the last few days to [Yichao Liu](https://www.linkedin.com/in/yichaolu/?originalSubdomain=ca), an industry expert on recommender systems. At the winner's conference, he asked me: "You guys had a single learner? If you ran XGBoost you would have won". Maybe. I wouldn't know, because I didn't have the resources to run XGBoost. "It's time to find out", I thought to myself. So I said "yes" when industry came knocking. 
+Those are the parts I love about academia. And then of course, there is the icky part of every job. The publications process, the grants-writing, the bureaucracy. Being a method-agnostic, data-driven omnivore, I find it hard to "fit in" any community. End of 2021, my student [Yangxinyu Xie](https://xieyangxinyu.github.io/) and I did an [IEEE BigData competition](https://www.iarai.ac.at/science4cast/). We lost the lead in the last few days to [Yichao Liu](https://www.linkedin.com/in/yichaolu/?originalSubdomain=ca), an industry expert on recommender systems. At the winner's conference, he asked me: "You guys had a single learner? If you ran XGBoost you would have won". Maybe. I wouldn't know, because I didn't have the resources to run XGBoost. "It's time to find out", I thought to myself. So I said "yes" when industry came knocking. 
 
-#### Finance (2021-)
+#### Finance (2022-)
 
 Since 2021 I have worked at the [Chicago Trading Company](https://www.chicagotrading.com) as a quantative researcher. My work is mostly portfolio optimization for options trading.
 
