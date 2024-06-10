@@ -23,7 +23,7 @@ Those are the parts I love about academia. And then of course, there is the icky
 
 #### Finance (2022-)
 
-Since 2021 I have worked at the [Chicago Trading Company](https://www.chicagotrading.com) as a quantative researcher. My work is mostly portfolio optimization for options trading.
+Since 2022 I have worked at the [Chicago Trading Company](https://www.chicagotrading.com) as a quantative researcher. My work is mostly portfolio optimization for options trading.
 
 Here is a couple of books I learned of since joining CTC and enjoy reading
 
