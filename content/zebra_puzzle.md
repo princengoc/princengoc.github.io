@@ -1,6 +1,6 @@
 title: who-owns-the-zebra
 date: 2024-08-15
-tags: prolog, gpt4, zebra puzzle, seven languages, recursion, books rules
+tags: prolog, gpt4, zebra puzzle, seven languages, recursion, books are the best
 description: my prolog aha moment, ChatGPT is a terrible teacher, why that's not good, and why that's not-not-good. 
 
 # Who owns the zebra? 
