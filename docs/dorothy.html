@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="author" content="Ngoc M Tran">
+    <meta name="description" content="Clojure in one week was a very tall order. GPT-4 sort of allowed me to cheat. And I'm glad it's over.">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>dorothy-treasure-hunt-game-clojure | Research | Code | Solve</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">Ngoc M Tran</a></h1>
+      <nav>
+        <h2>Research | Code | Solve</h2>
+        <ul>
+          <li><h2><a href="/">Blog</a></h2></li>
+          <li><h2><a href="/archive.html">Archive</a></h2></li>
+          <li><h2><a href="/tags/">Tags</a></h2></li>
+          <li><h2><a href="/about.html">About Me</a></h2></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+    
+
+  
+  <h2>dorothy-treasure-hunt-game-clojure</h2>
+  
+
+  <aside>
+    <p>published on 2024-09-04
+
+    
+    · tagged with
+      
+        <a href="/tags/beginner project.html">#beginner project</a>, 
+        <a href="/tags/clojure.html">#clojure</a>, 
+        <a href="/tags/gpt4.html">#gpt4</a>, 
+        <a href="/tags/seven languages.html">#seven languages</a> and 
+        <a href="/tags/the joy of clojure.html">#the joy of clojure</a>
+    
+    </p>
+  </aside>
+
+  <h1>Can Clojure really be learned in a week?</h1>
+<p>If I could sum up my feeling for <code>Clojure</code> this last week in one word, it is <strong>deception</strong>. The error messages, the syntax, the style, the books, STM promise of concurrency: everything has a layer of deception. Everything is &ldquo;not quite what it seems&rdquo;. Occasionally I found it liberating to be duped, as it exposed my weaknesses and hardened me as a programmer. But for the most part I&rsquo;m tired, annoyed, and just want to get away as fast as I could. </p>
+<p>I thought I had some advantages coming to Clojure as a newbie. I&rsquo;ve been teaching <code>racket</code> to my daughter with <a href="https://nostarch.com/realmofracket.htm">Realm of Racket</a>, so prefix notation and parentheses are a breeze. I&rsquo;ve been studiously following <a href="https://pragprog.com/titles/btlang/seven-languages-in-seven-weeks/">the book</a>, so functional programming, tail recursion, or concurrency aren&rsquo;t foreign concepts. I have always cared about distributed computing as well, so <code>agents</code> felt like <code>actors</code>. Easy right? Well, day 1 and 2 were fine. On Day 3, my hair was on fire. </p>
+<p>In picking <code>Clojure</code> as one of the seven languages, the book bit off more than it can chew. Over five pages it flew through STM (software transactional memory), <code>refs</code>, <code>agents</code> and <code>atoms</code>. I struggled to understand STM, or when to use <code>refs</code> and when to use <code>atoms</code>. I supplemented my learning with <a href="https://joyofclojure.github.io/">The Joy of Clojure</a>, which was&hellip; a good reference but very dense, and not exactly joyful.</p>
+<p>In the end I built my capstone project and called it a week. Dorothy found her Wizard, and I found my escape out of Clojure land. </p>
+<video autoplay muted playsinline controls width="640">
+  <source src="dorothy.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<h2>Clojure: the cons</h2>
+<p>There wasn&rsquo;t a one-big-thing I dislike about Clojure, it&rsquo;s more like a culmination of small annoyance that iritates. First, there are too many macros leading to too many shortcut syntaxes to learn. Right from the start, we have <code>def</code>, <code>defn</code>, then <code>#()</code>. Here are three different ways you can <code>add</code></p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">add</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="kd">defn </span><span class="nv">add</span><span class="w"> </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
+
+<span class="p">(</span><span class="k">def </span><span class="nv">add</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="nv">%1</span><span class="w"> </span><span class="nv">%2</span><span class="p">))</span>
+</code></pre></div>
+
+<p><code>%</code> is your implicit argument. <code>#()</code> is your anonymous function. Now, one of this is the &ldquo;right way&rdquo; per community convention. (I&rsquo;d say the <code>defn</code> in this example). But in other cases I&rsquo;m not sure which is &ldquo;right&rdquo;. It makes parsing codes extra hard. And it&rsquo;s not just functions: I could write <code>\D</code> or <code>'D</code> to mean the character D. As far as I could tell, <code>'</code> doesn&rsquo;t work to represent a space, I need to write <code>\space</code>.  Well - why bother with the <code>'D</code> notation then??</p>
+<p>The issue was exacerbated by my reliance on GPT4. It would rewrite my codes with sleak macros that I didn&rsquo;t know about. Here is an example. </p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">can-move?</span><span class="w"> </span><span class="nv">target-position</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="p">(</span><span class="nf">swap!</span><span class="w"> </span><span class="nv">game-state</span>
+<span class="w">              </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">state</span><span class="p">]</span>
+<span class="w">                </span><span class="p">(</span><span class="nb">-&gt; </span><span class="nv">state</span>
+<span class="w">                    </span><span class="p">(</span><span class="nb">assoc </span><span class="ss">:dorothy</span><span class="w"> </span><span class="nv">target-position</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">(</span><span class="nf">update</span><span class="w"> </span><span class="ss">:visited</span><span class="w"> </span><span class="nb">conj </span><span class="nv">target-position</span><span class="p">))))</span>
+<span class="w">        </span><span class="p">)</span>
+</code></pre></div>
+
+<p>I learned that <code>-&gt;</code> is the <code>thread-first</code> macro, used to remove nesting and make codes more readable. Well, it would be more readable if I was introduced to it in the first place, not stumble upon it like a random Latin word in the middle of a French text. It&rsquo;s hard enough to learn French, it&rsquo;s extra annoying when new words kept on popping up while you&rsquo;re practicing. What&rsquo;s worse, the <code>-&gt;</code> is only used once through my project. Without repetitions, I just could not build confidence or affinity for Clojure. </p>
+<p>Related to this issue is kebab case. It doesn&rsquo;t help that <code>VSCode</code> sucks at dealing with kebab cases and indentation for Clojure. I cannot tell if I should write</p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">A</span><span class="w"> </span><span class="nv">a</span>
+<span class="w">        </span><span class="nv">B</span><span class="w"> </span><span class="p">(</span><span class="k">if </span><span class="nv">dog?</span><span class="w"> </span><span class="nv">woof</span><span class="w"> </span><span class="nv">meow</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">C</span><span class="w"> </span><span class="p">(</span><span class="nf">some-horribly-long-block</span><span class="w"> </span><span class="nv">arg1</span><span class="w"> </span><span class="nv">arg2</span><span class="w"> </span>
+<span class="w">            </span><span class="p">(</span><span class="nf">more-nesting</span><span class="w"> </span><span class="nv">arg3</span><span class="p">)</span>
+<span class="w">          </span><span class="p">)</span>
+<span class="w">       </span><span class="p">]</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="nf">do</span>
+<span class="w">        </span><span class="nv">...</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+</code></pre></div>
+
+<p>or if I should keep things inline, or some mixture of both, like</p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">A</span><span class="w"> </span><span class="nv">a</span>
+<span class="w">        </span><span class="nv">B</span><span class="w"> </span><span class="p">(</span><span class="k">if </span><span class="nv">dog?</span><span class="w"> </span><span class="nv">woof</span><span class="w"> </span><span class="nv">meow</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">C</span><span class="w"> </span><span class="p">(</span><span class="nf">some-horribly-long-block</span><span class="w"> </span><span class="nv">arg1</span><span class="w"> </span><span class="nv">arg2</span><span class="w"> </span><span class="p">(</span><span class="nf">more-nesting</span><span class="w"> </span><span class="nv">arg3</span><span class="p">))]</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="k">do </span><span class="nv">...</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+</code></pre></div>
+
+<p>GPT4 recommends this sort of formatting</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">display-grid</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span><span class="p">(</span><span class="nf">clear-screen</span><span class="p">)</span>
+<span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[[</span><span class="nv">cx</span><span class="w"> </span><span class="nv">cy</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="ss">:dorothy</span><span class="w"> </span><span class="o">@</span><span class="nv">game-state</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">size</span><span class="w"> </span><span class="p">(</span><span class="ss">:grid-size</span><span class="w"> </span><span class="o">@</span><span class="nv">game-state</span><span class="p">)</span><span class="w">  </span><span class="c1">; if size is 2, this will create a 5x5 grid (2 to each side of current-position)</span>
+<span class="w">        </span><span class="nv">positions</span><span class="w"> </span><span class="p">(</span><span class="nb">for </span><span class="p">[</span><span class="nv">y</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="p">(</span><span class="nb">- </span><span class="nv">cy</span><span class="w"> </span><span class="nv">size</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="nv">cy</span><span class="w"> </span><span class="nv">size</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+<span class="w">                        </span><span class="nv">x</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="p">(</span><span class="nb">- </span><span class="nv">cx</span><span class="w"> </span><span class="nv">size</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="nv">cx</span><span class="w"> </span><span class="nv">size</span><span class="w"> </span><span class="mi">1</span><span class="p">))]</span>
+<span class="w">                    </span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">])]</span>
+<span class="w">    </span><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">row</span><span class="w"> </span><span class="p">(</span><span class="nf">partition</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="nv">size</span><span class="p">))</span><span class="w"> </span><span class="nv">positions</span><span class="p">)]</span><span class="w"> </span><span class="c1">; partition positions into rows</span>
+<span class="w">      </span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">apply str </span><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]]</span><span class="w"> </span><span class="p">(</span><span class="nf">generate-board</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">))</span><span class="w"> </span><span class="nv">row</span><span class="p">))))))</span>
+</code></pre></div>
+
+<p>which is fine but took some time to verify that the brackets close up, for example, so that everything is still in the scope of <code>let</code>. I constantly had to squint, on top of thinking about prefix and broadcasting. It&rsquo;s a shame that stylistic issues like these stop me from getting to the Joy of Clojure. But style matters. </p>
+<p>Then there&rsquo;s interop with Java. I have an irrational dislike of Java. It was my first language, and at the time I hated how verbose Java is, how ugly Swing looked, how confusing the error messages were, how everyone around me said &ldquo;oh you should write it in C&rdquo;. I am sure Java is good for something, it&rsquo;s just never <em>my</em> thing that needed Java. So Clojure with the Java interop greatly annoys me. Java crept up in the error messages, and OMG those things are incomprehensible. <code>lein repl</code> didn&rsquo;t work so I didn&rsquo;t have a functioning REPL, and had to rely on honest debugging. Event GPT4 at one point gave up. </p>
+<blockquote>
+<ol>
+<li>Possible Source of the Error:</li>
+</ol>
+<p>The error message Unable to resolve symbol: position in this context suggests that position is not recognized in some context, but based on the functions you’ve provided, it doesn’t seem like a problem directly within these function definitions.</p>
+</blockquote>
+<p>Then there&rsquo;s <code>ref, agent, atom, var</code>. Seven Languages was too brief, The Joy of Clojure helped, but it kept on mingling anti-examples with examples, making it FAR from joyful to read. Take for example, Chapter 10.2.2 titled <code>Commutative change with commute</code>. It started out like this</p>
+<blockquote>
+<p>Figure 10.8 showed that using <code>alter</code> can cause a transaction to retry if a ref it depends
+on is modified and committed while it’s running. But there may be circumstances
+where the value of a ref in a given transaction isn’t important to its completion seman-
+tics. For example, the <code>num-moves</code> ref is a simple counter, and surely its value at any
+given time is irrelevant for determining how it should be incremented. To handle
+these loose dependency circumstances, Clojure offers an operation named <code>commute</code>
+that takes a function to apply to a ref.</p>
+</blockquote>
+<p>Great, so you would think that update <code>num-moves</code> with <code>commute</code> will be our example here. Nope. Turns out that <code>num-moves</code> is not compatible with <code>commute</code>, because the function that runs <code>commute</code> will be ran twice. <code>place-piece</code> is fine since it&rsquo;s idempotent, but the update of <code>num-moves</code>, which just increases the value of <code>moves</code>, is not idempotent. Then why present this example in the first place??!! </p>
+<p>Then there is STM. The introduction of both Seven Languages and The Joy made me think that it&rsquo;s some magic bullet to resolve multithreading issues without locks (amazing!!). I had to read until the end of the chapter, and tinker with toy programs, to understand that there&rsquo;s no magic. In fact, there&rsquo;s quite some amount of opacity around thread resolution; I cannot be sure when I read codes dry which threads would be asked to retry when. Chapter 10.2.4 had a good example to stress-test refs, and I understood the role of <code>:max-history</code>, but still have not grasped the role of <code>:min-history</code>. (Why can&rsquo;t the min always be 0?) </p>
+<h2>Clojure: pros</h2>
+<p>Stepping back, all my issues with Clojure are about the cosmetics rather than Clojure itself. There are things about Clojure I do like: the local scope of <code>let</code>, the concept of a transaction block, shared memory, quoting, lazy evaluation. I have yet to be enlightened by <code>macros</code>, but I trust the gurus of the world that they&rsquo; great. I would reach out to Clojure if I inherit a large Java code base and want to write in a more functional style. </p>
+<h2>GPT-4 and programming at a higher level is bad for beginners, good for veterans</h2>
+<p>GPT-4 is good at Clojure. Not everything it wrote is bug-free, but I found that it enabled me to switch into a &ldquo;meta&rdquo; mode. Instead of worrying about syntax issues, I can scrutinize the codes that it write, think about corner cases or redesigns and restructuring. I often used the first version that GPT-4 write as the first draft, then build on it. It took a lot of discipline to <em>not</em> query GPT-4 in subsequent rewrite, and I tried to use the API as much as possible. </p>
+<p>But I would in general <strong>recommend against</strong> this use of GPT-4 for learning languages. <code>Clojure</code> is the <em>only</em> language out of Seven Languages where I relied a lot on GPT-4 to draft, and it comes at a steep cost: I&rsquo;m not as proficient at Clojure as I am at, say, Erlang or Prolog. But most importantly, relying on GPT-4 to rewrite codes made me <strong>tired and annoyed</strong>: I didn&rsquo;t walk away feeling that the time was well spent. I sometimes barely advanced my Clojure knowledge even though I read a lot of Clojure codes, and if I did, I would have promptly forgotten how to write <code>doseq</code> the next morning. It took the joy out of programming and replaced it with a productivity treadmill, a feeling that I just wanted to &ldquo;get it to work&rdquo;. </p>
+<p>It&rsquo;s probably a bit like learning to solve word math problems without a good grasp of the basic operations, and ne had to rely on a calculator as the crutch. If one already knew how to add, the calculator is a productivity tool. If one doesn&rsquo;t know how to add, one feels like an imposter. </p>
+
+
+    </main>
+
+    <footer>
+      <p>This website was built with <a href="https://github.com/venthur/blag">blag</a>, which I recommend.
+      <br>
+    </footer>
+  </body>
+
+</html>
