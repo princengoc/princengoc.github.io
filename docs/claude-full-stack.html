@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="author" content="Ngoc M Tran">
+    <meta name="description" content="A reflection on what AI-assisted coding has *really* been like -- the struggles, the breakthroughs, and the lessons learned.">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <title>full-stack-engineering-with-claude | Research | Code | Solve</title>
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="/">Ngoc M Tran</a></h1>
+      <nav>
+        <h2>Research | Code | Solve</h2>
+        <ul>
+          <li><h2><a href="/">Blog</a></h2></li>
+          <li><h2><a href="/archive.html">Archive</a></h2></li>
+          <li><h2><a href="/tags/">Tags</a></h2></li>
+          <li><h2><a href="/about.html">About Me</a></h2></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+    
+
+  
+  <h2>full-stack-engineering-with-claude</h2>
+  
+
+  <aside>
+    <p>published on 2025-03-03
+
+    
+    · tagged with
+      
+        <a href="/tags/claude.html">#claude</a>, 
+        <a href="/tags/gpt4.html">#gpt4</a>, 
+        <a href="/tags/pet project.html">#pet project</a>, 
+        <a href="/tags/typescript.html">#typescript</a> and 
+        <a href="/tags/unspoken.html">#unspoken</a>
+    
+    </p>
+  </aside>
+
+  <h1>Full-Stack Engineering with Claude: From Copy-Pasting to Building for Real</h1>
+<p>Five months ago, I was blindly copy-pasting Claude’s code, barely understanding what it was doing. Today, I actually believe I could work as a full-stack engineer. To be clear, I wasn’t looking to become a full-stack engineer &ndash; I just had apps I really, really wanted to build.  </p>
+<p>With <a href="https://un-spoken.netlify.app/"><em>Unspoken</em></a> beta now released, I want to reflect on what AI-assisted coding has <em>really</em> been like &ndash; the struggles, the breakthroughs, and the lessons learned.  </p>
+<h3><strong>AI and Coding: The Early Struggles</strong></h3>
+<p>I&rsquo;m all for AI in coding, but I still don’t have GitHub Copilot set up. Why? Because my experience with GPT-4 for Python development was so inconsistent that Copilot felt like it would slow me down.  </p>
+<p>Sure, AI helped <em>sometimes</em> &ndash; saving me from wrangling a plotting library or setting up a boilerplate data pipeline. But half the time, I could have written the line myself faster. The other half, it gave me broken scripts, and after a few frustrating iterations, I’d take over manually.  </p>
+<p>It wasn’t that AI couldn’t code &ndash; it just wasn’t <em>better</em> than what I could already do. Python was my home turf. I knew the libraries, the quirks, the shortcuts. AI wasn’t game-changing because I didn’t <em>need</em> it.  </p>
+<p>But when I started building apps, that was a different story. By October 2024, I had technical experience, but I was far from a full-stack engineer. My frontend knowledge was limited to hacking together Dash and Plotly at work. My backend experience mostly involved swearing at Snowflake. </p>
+<h3><strong>The AI Honeymoon: Rapid Prototyping, Then Chaos</strong></h3>
+<p><strong>Prototyping was magic.</strong>  </p>
+<p>I tried Claude after reading (Simon Willison)[https://simonwillison.net/2024/Oct/21/claude-artifacts/] blog post on its artifact preview. Being able to <em>see</em> live previews of front-end code felt revolutionary. The designs looked amazing to my untrained eyes, and that gave me the confidence to experiment.</p>
+<p><strong>Scaling was a nightmare.</strong>  </p>
+<p>The honeymoon lasted about a week. I had a Frankenstein codebase that felt like a DIY renovation: first we start with a prototype of the living room, then add on the plumbings, then redo the kitchen, and so on. AI-assisted coding is fantastic for quick UI generation, but once your app grows, things break. And AI doesn’t <em>fix</em> messy architecture &ndash; it <em>accelerates</em> it. It was easy for Claude to suggest specific libraries to fix specific problems (state issues? TanQuery!) without considering how we got into the rut in the first place. </p>
+<p>That’s when I realized: AI is only as good as the instructions you give it. And to give better instructions, you have to know what you’re doing.  </p>
+<h2><strong>Lesson 1: Learn.</strong></h2>
+<p>I asked Claude if my code could be structured better. That’s when it casually introduced me to <strong>context providers and hooks</strong>. Life-changing. </p>
+<p>Looking back, it’s wild that I was writing a React app without knowing what hooks were. But that’s just how AI-assisted learning works &ndash; it’s pain-driven. You don’t realize you’re missing a concept until something breaks. Then you ask AI, and <em>boom</em>, new lesson unlocked.  </p>
+<p>Here’s the problem: AI works best when you use the <em>right</em> words. As a beginner, you don’t <em>know</em> the right words, so you rely on whatever defaults AI throws at you. And AI defaults rarely lead to production-grade software.</p>
+<p>I should have known this. A year ago, GPT-3.5 had me manually writing HTML + CSS, building a Flask backend, and orchestrating background tasks with Celery and Redis. I learned a lot (I love Redis), but maintenance was a nightmare.  </p>
+<p>By October 2024, Claude 3.5 Sonnet gave me a TypeScript React Next app with Local Storage. A much better starting point. But even then, I had to evolve the stack:  </p>
+<ul>
+<li><strong>Frontend:</strong> Went through (something I forgot), then Mantine  </li>
+<li><strong>Backend:</strong> Dexie to Tanstack + MirageJS to Firebase to Azure SQL Database  </li>
+</ul>
+<p>Each time, I switched libraries to solve specific pain points. Then my needs grew, and I found <em>new</em> pain points. AI-assisted learning is great, but it’s also wildly inefficient.  </p>
+<h3><strong>The Fix: Be <em>Picky and Demanding</em></strong></h3>
+<p>Want better AI output? Learn <em>just enough</em> about architecture, libraries, and best practices so you can be <em>picky</em>.  </p>
+<ul>
+<li><strong>Shop around</strong> for libraries. Understand their pros and cons before committing.  </li>
+<li><strong>Be specific</strong> with AI. “Use X because I want Y” saves you from default mediocre suggestions.</li>
+<li><strong>Demand quality.</strong> AI-generated code isn’t final &ndash; it’s a first draft. Push for improvements.  </li>
+</ul>
+<p>A couple of months ago, I had to write (Tiptap extensions)[https://tiptap.dev/docs/editor/extensions/overview]. This time, I didn’t just ask AI to generate code &ndash; I read the docs, learned the design philosophy, and explored alternatives (Lexical, I tried to love you, but I couldn&rsquo;t, sorry). I sandboxed a project just for building Tiptap extensions, so that I can learn. Once I actually <em>understood</em> Tiptap, I could supervise AI’s work. The result? Faster iterations, fewer bugs, and a much more <strong>consistent</strong> app.  </p>
+<h2><strong>Lesson 2: Refactor Codes As Often As You Do Laundry</strong></h2>
+<p>I mean it. A clean, consistent codebase is <em>critical</em> for AI-assisted coding.  Why? Because AI doesn’t <em>think</em> &ndash; it pattern matches. When I tell Claude, “Implement the Reactions system like we did the Exchange system,” it nails it in five minutes. AI is phenomenal at copy-pasting. Give it a consistent, good example to replicate. And I don&rsquo;t mean trivial things like naming or code structures &ndash; AI is already very good at that. I mean major refactors, one that takes a document to describe, that completely shuffles up your business logic, that normally you would moan if someone forces it upon you. </p>
+<p><img src="/figures/claude-refactor.png" alt="Claude understood my request for refactor" width="640"></p>
+<p>Of course one has to be prepared for follow-ups, like this. </p>
+<blockquote>
+<p>Review the project description and the project codes. This project was recently revamped in logic and went through a major refactor, so I need to go through and review that everything is implemented consistently.  </p>
+<p>First, I think the GameBoard.tsx and ListenerReactions.tsx files need tobe reviewed, since they have some seemingly serious typescript errors that indicate logic problems</p>
+</blockquote>
+<p>Why do laundry? Because the flip side is: messy codes = messy AI output. The messier your project gets, the worse AI’s codes become. If something feels off, clean it up. Better yet &ndash; refactor right after AI suggestions so the chaos doesn’t pile up.  </p>
+<h2><strong>Lesson 3: Pick a Popular Stack (or Prepare to Work)</strong></h2>
+<p>AI fails in many ways, but <strong>library upgrades</strong> are especially painful.  </p>
+<p>Claude sometimes writes deprecated code. My workaround? Ask GPT-4 to rewrite it, since it has web search. But when GPT doesn’t get it right, I have two choices:  </p>
+<ol>
+<li><strong>Dig through GitHub issues</strong>, or</li>
+<li><strong>Switch to a better-supported library</strong>  </li>
+</ol>
+<p>I’ve done this multiple times (e.g., ditching Lexical for Tiptap), and I suspect I’m not alone. AI-driven development might be reinforcing a <em>rich-get-richer</em> effect &ndash; popular libraries get better AI support, making them even <em>more</em> popular.  </p>
+<p>So if you want AI to work in your favor, stick to well-used stacks. Or prepare to roll up your sleeves and do actual coding. </p>
+<hr>
+<h2><strong>Where I Am Now</strong></h2>
+<p><a href="https://un-spoken.netlify.app/"><em>Unspoken</em></a> was built in a few weeks. It has the scope of a “weekend” project (ie, nothing much), but I’m still proud of what Claude and I built. </p>
+<p>At this point, I act as a <strong>very hands-on, slightly OCD team lead</strong> to AI. I review its PRs, enforce quality control, and dive into debugging trenches when needed. I’m comfortable enough with TypeScript to make small fixes myself, saving the hassle of explaining everything to Claude. But most of my time is spent making <strong>decisions</strong> on how to implement the next feature, then reviewing AI’s output and refining it.  </p>
+<p>Our code isn’t perfect &ndash; we still do laundry. But it’s <em>consistent</em> enough that building new features is <strong>fast, exciting, and fun</strong>.  </p>
+<p>And in the end, <em>fun</em> is all that matters.</p>
+
+
+    </main>
+
+    <footer>
+      <p>This website was built with <a href="https://github.com/venthur/blag">blag</a>, which I recommend.
+      <br>
+    </footer>
+  </body>
+
+</html>
