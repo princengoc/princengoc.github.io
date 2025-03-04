@@ -15,6 +15,8 @@ Talk-based card games spawn a full genre. I particularly enjoy two extremes: dec
 
 Hence [Unspoken](https://un-spoken.netlify.app/) is **remote play** by default: just send and receive voice messages at your own pace. Messages are ephemeral (auto-delete after first listened), encouraging undivided attention to each story. First remote game I played with a friend (for real, not just debugging the app), I found recording my own voice terrifying. At the same time, listening to her voice in the middle of the night is really soothing. It's very personal, much more so than texts. 
 
+<img src="/figures/unspoken-screenshot.png" alt="Screenshot of Unspoken" width="640">
+
 In my imagination, [Unspoken](https://un-spoken.netlify.app/) is for long-distance relationships, family across time zones, or busy friends who don’t always have a free evening to chat. I also have a U13 level that got enthusiastic thumbs up from my daughter, with cards like *"Sometimes I wish my parents would ..."* or *"My dream playground would have..."*. 
 
 
@@ -31,4 +33,4 @@ I have a small wish list on this game myself. Aside from the boring (anonymous l
 
 If you’ve played, given feedback, or just listened to me talk about this idea -- thank you! If you haven't played yet: [give it a try](https://un-spoken.netlify.app/)! 
 
-I'm always looking for game improvement ideas, bugs or otherwise. If you know me, just tell me :). If you don't, well... or want to be all formal about it, please report at [https://github.com/princengoc/unspoken/issues](https://github.com/princengoc/unspoken/issues). 
+I'm always looking for game improvement ideas, bugs or otherwise. If you know me, just tell me :). If you don't, well... I'll make the github public soon. 
